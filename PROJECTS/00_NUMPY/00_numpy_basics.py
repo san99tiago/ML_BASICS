@@ -1,6 +1,8 @@
 #BASIC UNDERSTANDING OF NUMPY
 #Santiago Garcia Arango
 #-------------------------------------------------------------------------
+#Most of these scripts are based on an online Udemy course.
+#-------------------------------------------------------------------------
 #NumPy is a linear algebra library for Python. It is used in many
 #other libraries for the "data-ecosystem".
 #It is created based on Low-level C programming, making it fast!
