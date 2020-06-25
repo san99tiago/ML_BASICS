@@ -89,12 +89,9 @@ print( "my_array_12 (random matrix UNIFORM distribution(0,1)):\n", my_array_12, 
 
 #Create matrix of give shape with random numbers of NORMAL distribution (Gauss Distrib.)
 my_array_13 = np.random.randn( 5, 3)
-print( "my_array_13 (random matrix NORMAL distribution(Gauss):\n", my_array_13, "\n")
+print( "my_array_13 (random matrix NORMAL distribution(Gauss)):\n", my_array_13, "\n")
 
 
-
-
-
-
-
-
+#Create matrix of given shape with random integers from X to Y number
+my_array_14 = np.random.randint( 0, 99, (5, 5))
+print( "my_array_13 (random matrix of integers from X to Y):\n", my_array_14, "\n")
