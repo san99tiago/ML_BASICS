@@ -7,6 +7,11 @@
 #other libraries for the "data-ecosystem".
 #It is created based on Low-level C programming, making it fast!
 
+#It is way better to use NumPy arrays, than lists, because:
+# 1) The use less space to storage.
+# 2) The way that they are stored is contiguous memory (faster)
+# 3) We can do A LOT of operations, methods, functionalities, etc!
+
 #For using NumPy, we have to install it first (with pip package installer)
 #--------------------------------------------------------------------------
 
