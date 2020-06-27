@@ -1,5 +1,5 @@
 #USEFUL METHODS OF THE NUMPY ARRAYS
-#Santiago Garcia Arango
+#Santiago Garcia Arango, June 2020
 #-------------------------------------------------------------------------
 import numpy as np
 
