@@ -1,5 +1,5 @@
 #BASIC UNDERSTANDING OF NUMPY
-#Santiago Garcia Arango
+#Santiago Garcia Arango, June 2020
 #-------------------------------------------------------------------------
 #Most of these scripts are based on an online Udemy course.
 #-------------------------------------------------------------------------
