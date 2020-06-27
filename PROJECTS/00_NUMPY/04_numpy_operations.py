@@ -1,5 +1,5 @@
 #NUMPY OPERATIONS OF ARRAYS
-#Santiago Garcia Arango
+#Santiago Garcia Arango, June 2020
 #-------------------------------------------------------------------------
 import numpy as np
 
