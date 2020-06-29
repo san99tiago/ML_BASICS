@@ -54,3 +54,16 @@ print("data_frame[ data_frame>0 ] :")
 print(data_frame[ data_frame>0 ], "\n")
 
 
+#Multiple AND conditions of a dataframe in pandas (NOT with "and" operator)
+#Note: for multiple conditions, we must use "&" instead of "and" !!
+print("data_frame[ (data_frame['W']>0) & (data_frame['X']>0)]:\n")
+print( data_frame[ (data_frame['W']>0) & (data_frame['X']>0) ], "\n" )
+
+
+#Multiple OR conditions of a dataframe in pandas (NOT with "or" operator)
+#Note: for multiple or conditions, we must use "|" instead of "or" !!
+print("data_frame[ (data_frame['W']>0) | (data_frame['X']>0)]:\n")
+print( data_frame[ (data_frame['W']>0) | (data_frame['X']>0) ], "\n")
+
+
+
