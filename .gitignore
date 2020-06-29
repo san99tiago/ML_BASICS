@@ -1,3 +1,6 @@
+#Ignore local directory for online course info
+course_info
+
 #Ignore the virtual environment for python
 venv
 
