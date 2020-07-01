@@ -47,11 +47,18 @@ plt.title("MY FIGURE 1 TITLE") #Title for the figure
 #------------------FIGURE 2(FUNCTIONAL METHOD)---------------------
 #If we want multiple plots, we can use the "subplot()" method...
 plt.figure(2)
-plt.subplot(1,2,1)
+plt.subplot(2,1,1)
 plt.plot(x_1, y_1, 'g')
 
-plt.subplot(1,2,2)
+plt.title("MY FIGURE 1 TITLE") #Title for the figure
+plt.ylabel("Y1 LABEL") #Label the y axis as desired
+
+
+plt.subplot(2,1,2)
 plt.plot(x_1,-y_1, 'b')
+
+plt.xlabel("X LABEL") #Label the x axis as desired
+plt.ylabel("Y2 LABEL") #Label the y axis as desired
 #WARNING: look at the end ( the plt.show() method is necessary!!!)
 
 
