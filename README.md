@@ -20,7 +20,7 @@ My advice is to primary understand the "pip" package installer, before working w
 
 ### Software dependencies
 * VS Code <br />
-Visual Studio Code is the main code editor for all files related to servers and high-level programming. This is not absolutely necessary, but from my experience, it gives us a great performance and we can link it with Git and Github easily.
+Visual Studio Code is the main code editor for Python scripts and high-level programming. This is not absolutely necessary, but from my experience, it gives us a great performance and we can link it with Git and Github easily.
 ```
 https://code.visualstudio.com/
 ```
