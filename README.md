@@ -1,4 +1,4 @@
- # :baby: :robot: MACHINE LEARNING BASICS :robot: :baby:
+# :baby: :robot: MACHINE LEARNING BASICS :robot: :baby:
 This repository covers the basic concepts of Machine Learning. <br />
 It begins with the necessary programming tools to understand the fundamental knowledge for development of ML solutions. <br />
 Then, it goes into more advanced topics and problem-solving with powerful ML approaches. <br />
@@ -7,7 +7,7 @@ The information of these repository is based on some lectures and my own presona
 * MIT 6.034: Artificial Intelligence (Fall 2010) <br />
 https://www.youtube.com/playlist?list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi
 
-* Stanford CS229: Machine Learning (Automn 2018) <br />
+* Stanford CS229: Machine Learning (Autumn 2018) <br />
 https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU
 
 * Udemy course: Python for Data Science and Machine Learning Bootcamp <br />
@@ -47,7 +47,7 @@ https://pandas.pydata.org/
 ```
 
 * MATPLOTLIB <br />
-This is a Python is a great library fro creating static, animated and interative data visualizations in a simple way.
+This is a Python is a great library fro creating static, animated and interactive data visualizations in a simple way.
 ```
 https://matplotlib.org/
 ```
@@ -82,4 +82,3 @@ I will be uploading most of the files, and try to keep it as clean as possible.
 
 ## Author :musical_keyboard:
 Santiago García Arango.
-
