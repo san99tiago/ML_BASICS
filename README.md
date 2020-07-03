@@ -47,7 +47,7 @@ https://pandas.pydata.org/
 ```
 
 * MATPLOTLIB <br />
-This is a Python is a great library fro creating static, animated and interactive data visualizations in a simple way.
+This is a great Python library for creating static, animated and interactive data visualizations in a simple way.
 ```
 https://matplotlib.org/
 ```
