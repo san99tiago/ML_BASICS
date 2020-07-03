@@ -1,6 +1,6 @@
- # MACHINE LEARNING BASICS :baby:
+ # :baby: :robot: MACHINE LEARNING BASICS :robot: :baby:
 This repository covers the basic concepts of Machine Learning. <br />
-It begins with the necessary programming tools to cover the main fundamental knowledge for development of ML solutions. <br />
+It begins with the necessary programming tools to understand the fundamental knowledge for development of ML solutions. <br />
 Then, it goes into more advanced topics and problem-solving with powerful ML approaches. <br />
 The information of these repository is based on some lectures and my own presonal projects: <br />
 
