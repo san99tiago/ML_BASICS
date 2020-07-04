@@ -55,6 +55,16 @@ ax.set_ylabel("Position [m]")
 ax.legend()
 
 
+#7. Add personalized text to the figure (anywhere) as my own notes
+ax.text(0.98, 0.02, 
+        'Santiago Garcia Arango',
+        verticalalignment='bottom', 
+        horizontalalignment='right',
+        transform=ax.transAxes,
+        color='black',
+        fontsize=10)
+
+
 #------------------------------SAVE FIGURES------------------------------
 #Current folder obtained with "os" library (to locate files better)
 current_folder = os.path.dirname( __file__ ) 
