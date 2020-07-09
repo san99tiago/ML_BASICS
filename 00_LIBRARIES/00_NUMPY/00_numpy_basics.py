@@ -97,7 +97,7 @@ print(my_array_12, "\n")
 
 # Matrix (given shape) with rand. numbers of NORMAL distrib. (Gauss Distrib.)
 my_array_13 = np.random.randn(5, 3)
-print("my_array_13 (random matrix NORMAL distribution(Gauss)):"
+print("my_array_13 (random matrix NORMAL distribution(Gauss)):")
 print(my_array_13, "\n")
 
 
