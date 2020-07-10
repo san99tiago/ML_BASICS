@@ -1,4 +1,4 @@
-# BASIC DISTRIBUTION PLOTS WITH SEABORN
+# CATEGORICAL PLOTS WITH SEABORN
 # Santiago Garcia Arango, July 2020
 
 import save_figure
