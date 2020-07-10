@@ -46,22 +46,26 @@ print("\n\ndata_frame =\n", data_frame)
 
 # --------------------DISTRIBUTION PLOT (ONE VARIABLE)---------------------
 # We pass a single column of a dataframe: "sns.displot(COLUMN)"
-plot_1 = sns.distplot(data_frame["total_bill"], bins=50)
-plot_1.set_title("DISTRIBUTION PLOT")
+fig_1, ax_1 = plt.subplots()
+sns.distplot(data_frame["total_bill"], bins=50, ax=ax_1)
+ax_1.set_title("DISTRIBUTION PLOT")
 
 # Optional: save the figure (I created a simple module to do this)
 save_figure.SaveFigure("output", "plot_1.pdf")
 
-# --------------------JOINT PLOT (TWO VARIABLES)---------------------------
+# ---------------------SPECIAL PLOTS---------------------------------------
+# These plots DON'T need to create a figure/axis to show (keep this in mind)
+
+# 1. JOINT PLOT (TWO VARIABLES)
 # We pass two columns of a dataframe and see the behavior
-plot_2 = sns.jointplot(x="total_bill", y="tip", data=data_frame, kind="reg")
+sns.jointplot(x="total_bill", y="tip", data=data_frame, kind="reg")
 
 save_figure.SaveFigure("output", "plot_2.pdf")
 
-# -----------------PAIRPLOT (N PAIRS OF VARIABLES)--------------------------
+# 2. PAIRPLOT (N PAIRS OF VARIABLES)
 # This allows us to plot valuable info from numeric pairs of variables!
 # Note: "hue" helps us to color the output based on other parameter!!!
-plot_3 = sns.pairplot(data_frame, hue="sex")
+sns.pairplot(data_frame, hue="sex")
 
 save_figure.SaveFigure("output", "plot_3.pdf")
 
