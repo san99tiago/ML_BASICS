@@ -46,6 +46,7 @@ class Tree:
         if self.data == data:
             return False  # Duplicate value given
         elif self.data > data:
+            # Do recurssion of insert(if not possible to insert directly)
             if self.left is not None:
                 return self.left.insert(data)
             else:
