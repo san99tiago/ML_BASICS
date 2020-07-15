@@ -52,6 +52,12 @@ This is a great Python library for creating static, animated and interactive dat
 https://matplotlib.org/
 ```
 
+* SEABORN <br />
+Library built "on top" of matplotlib, to create simple and powerful statistics plots.
+```
+https://seaborn.pydata.org/
+```
+
 * TKINTER <br />
 Tkinter is an integrated Library that gives us a great way to create GUI windows with Python. It is also a cross-platform that has the 
 advantage of working with the classic Tk windows and many libraries that integrate together to achieve amazing projects.
