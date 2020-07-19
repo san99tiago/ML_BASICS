@@ -26,4 +26,10 @@ g1.add_vertex(G)
 
 g1.add_edge(S, A)
 g1.add_edge(S, B)
+g1.add_edge(A, B)
+g1.add_edge(B, C)
+g1.add_edge(C, E)
+g1.add_edge(A, D)
+g1.add_edge(D, G)
+
 g1.show_graph()
