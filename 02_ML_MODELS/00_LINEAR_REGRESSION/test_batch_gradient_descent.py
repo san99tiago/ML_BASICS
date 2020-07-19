@@ -12,17 +12,17 @@ X = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 X = np.array(X)
 X = X.reshape((len(X), 1))  # Same as "x.reshape(-1, 1)"
 
-Y = [2, 4, 6, 8, 10.3, 12, 14, 16, 18, 19.8, 22, 24, 26, 28,
-        30.3, 32, 34, 36, 38, 40.2]
+Y = [2, 4, 6, 8, 11.7, 12, 14, 16, 18, 18.3, 22, 24, 26, 28,
+        30.9, 32, 34, 36, 38, 40.7]
 Y = np.array(Y)
 
-print("X = ", X)
-print("Y = ", Y)
+# print("X = ", X)
+# print("Y = ", Y)
 print("X.shape = {}  Y.shape = {}".format(X.shape, Y.shape))
 
-alpha = 0.0001  # Learning rate for gradient of Cost function J(theta)
-ep = 0.001  # Convergence criteria
-iterations = 1000  # Max number of iterations
+alpha = 0.00001  # Learning rate for gradient of Cost function J(theta)
+ep = 0.01  # Convergence criteria
+iterations = 10000  # Max number of iterations
 
 # Call gradient decent, and get the resulting theta vector for parameters
 lin_model = batch_gradient_descent.GradientDescent(
