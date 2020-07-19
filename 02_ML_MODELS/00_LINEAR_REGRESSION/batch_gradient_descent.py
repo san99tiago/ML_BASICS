@@ -54,7 +54,7 @@ class GradientDescent:
             predictions = np.dot(self.X, self.theta)
             gradient_vector = np.dot((predictions - self.Y), self.X)
             for j in range(n):
-                self.theta[j] = self.theta[j] - alpha*gradient_vector[j]
+                self.theta[j] = self.theta[j] - (alpha/m) * gradient_vector[j]
 
             J_new = self.get_cost_function_J(m)
 
