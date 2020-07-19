@@ -39,15 +39,15 @@ class GradientDescent:
     def add_1_bias_to_X(self):
         self.X = np.c_[np.ones((len(self.X), 1)), self.X]
 
-    def get_cost_function_J(self):
+    def get_cost_function_J(self, m):
         # Cost function, J(theta)
         predictions = np.dot(self.X, self.theta)
-        J = (1/2) * np.sum(np.square(predictions - self.Y))
+        J = (1/2*m) * np.sum(np.square(predictions - self.Y))
         return J
 
     def main_loop(self, alpha, n, m, ep, max_iterations):
         converged = False
-        J = self.get_cost_function_J()
+        J = self.get_cost_function_J(m)
         iter = 0
         while not converged:
 
@@ -56,8 +56,7 @@ class GradientDescent:
             for j in range(n):
                 self.theta[j] = self.theta[j] - alpha*gradient_vector[j]
 
-            predictions = np.dot(self.X, self.theta)
-            J_new = (1/2) * np.sum(np.square(predictions - self.Y))
+            J_new = self.get_cost_function_J(m)
 
             if abs(J - J_new) <= ep:
                 print('Converged, iterations: ', iter, '!!!')
