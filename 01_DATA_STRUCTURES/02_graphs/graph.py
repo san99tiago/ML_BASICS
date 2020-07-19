@@ -4,20 +4,21 @@
 class Vertex:
     def __init__(self, name):
         self.name = name
+        # List of tuples [(Vertex Object, distance)]
         self.neighbors = []
 
-    def add_neighbor(self, vertex_neighbor):
+    def add_neighbor(self, vertex_neighbor, distance):
         # Check that the neighbor vertex is NOT already in neighbors
         if vertex_neighbor not in self.neighbors:
-            self.neighbors.append(vertex_neighbor)
-            # We sort the objects by their name attribute
-            self.neighbors.sort(key=lambda x: x.name)
-            # self.neighbors.sort()
+            self.neighbors.append((vertex_neighbor, distance))
+            self.neighbors.sort(key=lambda n: n[0].name)
+
 
     def show_neighbors(self):
         print("[", end="")
-        for neighbor in self.neighbors:
-            print(neighbor.name, end=",")
+        for n in range(len(self.neighbors)):
+            print(self.neighbors[n][0].name, end=": ")
+            print(self.neighbors[n][1], end=",")
         print("]")
 
 class Graph:
@@ -33,13 +34,13 @@ class Graph:
         else:
             return False
 
-    def add_edge(self, vertex_1, vertex_2):
+    def add_edge(self, vertex_1, vertex_2, distance):
         name_1 = vertex_1.name
         name_2 = vertex_2.name
         are_in_graph = name_1 in self.vertices and name_2 in self.vertices
         if are_in_graph:
-            self.vertices[name_1].add_neighbor(vertex_2)
-            self.vertices[name_2].add_neighbor(vertex_1)
+            self.vertices[name_1].add_neighbor(vertex_2, distance)
+            self.vertices[name_2].add_neighbor(vertex_1, distance)
             return True
         else:
             return False
