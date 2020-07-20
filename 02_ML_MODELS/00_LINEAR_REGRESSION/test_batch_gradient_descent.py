@@ -20,7 +20,7 @@ Y = np.array(Y)
 # print("Y = ", Y)
 print("X.shape = {}  Y.shape = {}".format(X.shape, Y.shape))
 
-alpha = 0.00001  # Learning rate for gradient of Cost function J(theta)
+alpha = 0.001  # Learning rate for gradient of Cost function J(theta)
 ep = 0.01  # Convergence criteria
 iterations = 10000  # Max number of iterations
 
@@ -33,8 +33,8 @@ lin_model = batch_gradient_descent.GradientDescent(
     max_iterations=iterations
     )
 theta = lin_model.get_thetas()
-lin_model.plot_result()
 print("theta[0] = {}\ntheta[1] = {}".format(theta[0], theta[1]))
+lin_model.plot_result()
 
 # Check with scipy best linear regression possible (to compare)
 slope, intercept, r_value, p_value, sl_std_er = stats.linregress(X[:, 0], Y)
