@@ -3,6 +3,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 
 class GradientDescent:
@@ -16,12 +17,15 @@ class GradientDescent:
         :param y: vector of target variables (outputs)
         :param ep: constant value for eps of algorithm.
         :param max_iterations: constant integer of maximum iterations.
-        """
+        """ 
 
-        self.X = X  # X.shape = (M, N), but will become (M, N+1)
+        self.X = X  # X.shape = (M, N+1)
         self.y = y  # y.shape = (M, 1)
+
         m = self.X.shape[0]  # Number of training examples
         n = self.X.shape[1]  # Number of features (X inputs)
+
+        self.J_history = []  # Has the history of all J_cost_function_results
         self.create_initial_theta(n)
         self.add_1_bias_to_X()
         self.main_loop(alpha, n, m, ep, max_iterations)
@@ -41,6 +45,7 @@ class GradientDescent:
         # Cost function, J(theta)
         predictions = np.dot(self.X, self.theta)
         J = (1/2*m) * np.sum(np.square(predictions - self.y))
+        self.J_history.append(J)
         return J
 
     def main_loop(self, alpha, n, m, ep, max_iterations):
@@ -72,9 +77,6 @@ class GradientDescent:
                 print('Max interactions exceeded!')
                 converged = True
 
-    def get_thetas(self):
-        return self.theta
-
     def plot_result(self):
         # Only for models with 1 feature (but in practice its 2 because of...
         # ... the extra first vector of ones <bias 1 vector>)
@@ -90,5 +92,33 @@ class GradientDescent:
             plt.plot(self.X[:, 1], y_predict, 'k')
             plt.show()
 
+        if features == 3:
+            # Create a scatter plot for the actual data...
+            fig_3d = plt.figure()
+            ax = fig_3d.add_subplot(111, projection='3d')
+            ax.scatter(self.X[:,1], self.X[:,2], self.y)
+
+            # Create the surface for the output of linear regression...
+            x1_max = max(self.X[:,1])
+            x1_min = min(self.X[:,1])
+            x2_max = max(self.X[:,2])
+            x2_min = min(self.X[:,2])
+
+            
+            print("X1_max = ", x1_max)
+            print("X1_min = ", x1_min)
+            print("X2_max = ", x2_max)
+            print("X2_min = ", x2_min)
+
+            X1 = np.arange(x1_min, x1_max, 0.25)
+            X2 = np.arange(x2_min, x2_max, 0.25)
+            X1, X2 = np.meshgrid(X1, X2)
+            y_predict = self.theta[0] + self.theta[1]*X1 + self.theta[2]*X2
+
+            # y_predict = np.dot(self.theta.T, self.X.T)
+
+            ax.plot_surface(X1, X2, y_predict, alpha=0.5, color="r")
+            plt.show()
+            
 
 # Test found on <test_batch_gradient_descent.py>
