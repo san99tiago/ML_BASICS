@@ -16,3 +16,4 @@ scipy==1.5.1
 seaborn==0.10.1
 six==1.15.0
 threadpoolctl==2.1.0
+xlrd==1.2.0
