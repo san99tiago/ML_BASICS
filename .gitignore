@@ -7,6 +7,9 @@ venv
 #Ignore the python local cache
 __pycache__
 
+#Ignore auto-saved files
+.asv
+
 #Ignore the Visual Studio Code workspace settings
 .vscode
 
