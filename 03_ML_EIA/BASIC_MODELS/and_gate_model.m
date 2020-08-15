@@ -1,4 +1,4 @@
-% SCRIPT TO CREATE AND PREPARE DATA
+% SCRIPT TO CREATE AND PREPARE DATA AND MODEL
 % Santiago Garcia Arango
 clear; close all; clc;
 
@@ -39,7 +39,7 @@ ecm = zeros(ns, nmax);
 
 % Train the simple neural net
 for m=1:nmax
-    [yrk, ecm(:,m), w] = feedForwardPerceptron(alfa, entries, w, desired, "train"); 
+    [yrk, ecm(:,m), w] = feedForwardPerceptron(alfa, entries, w, desired, "train", "binary"); 
 end
 
 fprintf("WEIGHTS:\n\t");
