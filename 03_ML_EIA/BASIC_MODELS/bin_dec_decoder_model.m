@@ -24,7 +24,7 @@ fprintf("\t- NUMBER OF DATA (nd) = %d\n", nd);
 
 %%
 
-nmax = 50;  % Number of iterations
+nmax = 20;  % Number of iterations
 alfa = 0.1;  % Training rate
 
 % Create weight vector based on I/O (rows = Outputs, columns = Entries)
@@ -55,4 +55,12 @@ for i=1:ns
     title(strcat("OUTPUT ", num2str(i)));
     GRAFICA_BONITA("BINARY-DECIMAL-DECO-MODEL","plot");
 end
+
+fprintf('Plotting each desired-data output with the neural-net output...\n')
+figure;
+plot(1:nd,desired,'b',1:nd,yrk,'r',"Linewidth",2);
+xlabel('data');
+ylabel('ouput');
+legend('Desired Output','Neural Network Output', "Location", "best");
+GRAFICA_BONITA("TRAINING RESULT FOR EACH DATA");
 
