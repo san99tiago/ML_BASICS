@@ -25,6 +25,13 @@ Visual Studio Code is the main code editor for Python scripts and high-level pro
 https://code.visualstudio.com/
 ```
 
+* MATLAB <br />
+MATLAB is a great tool to work with Machine Learning Algorithms, however, you require a license to work with it.
+My goal is to make a transition from MATLAB to Python in the long term. Simulink is a great tool for Dynamic Systems.
+```
+https://www.mathworks.com/products/matlab.html
+```
+
 * Python <br />
 Python is the main programming language that let us work fast, with easy and powerful integration of different software solutions.
 ```
