@@ -57,3 +57,11 @@ for i=1:ns
     GRAFICA_BONITA("AND-GATE-MODEL","plot");
 end
 
+fprintf('Plotting each desired-data output with the neural-net output...\n')
+figure;
+plot(1:nd,desired,'*b',1:nd,yrk,'+r',"Linewidth",2);
+xlabel('data');
+ylabel('ouput');
+legend('Desired Output','Neural Network Output', "Location", "best");
+GRAFICA_BONITA("TRAINING RESULT FOR EACH DATA");
+
