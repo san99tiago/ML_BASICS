@@ -13,6 +13,8 @@ https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU
 * Udemy course: Python for Data Science and Machine Learning Bootcamp <br />
 https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/#instructor-1
 
+* Lectures of "Intelligent Systems" from the EIA University.
+
 ## Dependencies :vertical_traffic_light:
 The dependencies are mainly python libraries and the correct usage of them. <br />
 My advice is to primary understand the "pip" package installer, before working with other dependencies.
