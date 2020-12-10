@@ -3,7 +3,7 @@
 
 def layer_of_neurons_1():
     """
-    layer_of_neurons_1 is a simple function to show a single layer of neurons 
+    layer_of_neurons_1 is a simple function to show a single layer of neurons
     with a tedious way of applying the math involved.
     """
     inputs = [1, 2, 3, 2.5]
@@ -27,12 +27,12 @@ def layer_of_neurons_1():
         inputs[0]*weights_2[0] +
         inputs[1]*weights_2[1] +
         inputs[2]*weights_2[2] +
-        inputs[3]*weights_2[3] + bias_2, 
+        inputs[3]*weights_2[3] + bias_2,
 
         inputs[0]*weights_3[0] +
         inputs[1]*weights_3[1] +
         inputs[2]*weights_3[2] +
-        inputs[3]*weights_3[3] + bias_3, 
+        inputs[3]*weights_3[3] + bias_3,
     ]
 
     print("\nOUTPUTS 1: {}".format(outputs))
@@ -40,14 +40,14 @@ def layer_of_neurons_1():
 
 def layer_of_neurons_2():
     """
-    layer_of_neurons_2 is a simple function to show a single layer of neurons 
+    layer_of_neurons_2 is a simple function to show a single layer of neurons
     with a more "compact" way of applying the math involved.
     """
     inputs = [1, 2, 3, 2.5]
 
     weights = [[0.2, 0.8, -0.5, 1],
-                [0.5, -0.91, 0.26, -0.5],
-                [-0.26, -0.27, 0.17, 0.87]]
+            [0.5, -0.91, 0.26, -0.5],
+            [-0.26, -0.27, 0.17, 0.87]]
 
     biases = [2, 3, 0.5]
 
@@ -69,7 +69,6 @@ def layer_of_neurons_2():
 
         # Add neuron's current result to the layer's output list
         layer_outputs.append(neuron_output)
-
 
     outputs = layer_outputs
 
