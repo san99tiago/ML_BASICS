@@ -19,20 +19,20 @@ def layer_of_neurons_1():
     # Look that the inputs are "shared for all single neurons", and the ...
     # ... change is the specific weights and bias for each one
     outputs = [
-        inputs[0]*weights_1[0] +
-        inputs[1]*weights_1[1] +
-        inputs[2]*weights_1[2] +
-        inputs[3]*weights_1[3] + bias_1,
+        inputs[0] * weights_1[0] +
+        inputs[1] * weights_1[1] +
+        inputs[2] * weights_1[2] +
+        inputs[3] * weights_1[3] + bias_1,
 
-        inputs[0]*weights_2[0] +
-        inputs[1]*weights_2[1] +
-        inputs[2]*weights_2[2] +
-        inputs[3]*weights_2[3] + bias_2,
+        inputs[0] * weights_2[0] +
+        inputs[1] * weights_2[1] +
+        inputs[2] * weights_2[2] +
+        inputs[3] * weights_2[3] + bias_2,
 
-        inputs[0]*weights_3[0] +
-        inputs[1]*weights_3[1] +
-        inputs[2]*weights_3[2] +
-        inputs[3]*weights_3[3] + bias_3,
+        inputs[0] * weights_3[0] +
+        inputs[1] * weights_3[1] +
+        inputs[2] * weights_3[2] +
+        inputs[3] * weights_3[3] + bias_3,
     ]
 
     print("\nOUTPUTS 1: {}".format(outputs))
@@ -62,7 +62,7 @@ def layer_of_neurons_2():
         # For each input and weight to the current neuron
         for n_input, weight in zip(inputs, neuron_weights):
             # Multiply each input to its weight and add to neuron's output
-            neuron_output += n_input*weight
+            neuron_output += n_input * weight
 
         # After the main sum_product is done, add the bias
         neuron_output += neuron_bias
