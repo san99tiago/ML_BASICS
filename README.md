@@ -4,6 +4,10 @@ It begins with the necessary programming tools to understand the fundamental kno
 Then, it goes into more advanced topics and problem-solving with powerful ML approaches. <br />
 The information of these repository is based on some lectures and my own presonal projects: <br />
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/san99tiago/ML_BASICS/master/assets/GIF_MachineLearning.gif" width="30%" height="30%"/>
+</p>
+
 * MIT 6.034: Artificial Intelligence (Fall 2010) <br />
 https://www.youtube.com/playlist?list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi
 
