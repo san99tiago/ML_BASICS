@@ -4,28 +4,38 @@
 import numpy as np
 
 
-def general_layer_of_neurons():
+def two_layer_of_neurons():
     """
-    general_layer_of_neurons is a simple function to show a single layer of
-    neurons using NumPy library to simplify code and get more efficient results
+    two_layer_of_neurons is a simple function to show a double layer of
+    neurons using NumPy library.
     """
-    inputs = [[1.0, 2.0, 3.0, 2.5],
-            [2.0, 5.0, -1.0, 2.0],
-            [-1.5, 2.7, 3.3, -0.8]]
 
-    weights = [[0.2, 0.8, -0.5, 1],
-            [0.5, -0.91, 0.26, -0.5],
-            [-0.26, -0.27, 0.17, 0.87]]
+    # First layer info
+    inputs_1 = [[1.0, 2.0, 3.0, 2.5],
+                [2.0, 5.0, -1.0, 2.0],
+                [-1.5, 2.7, 3.3, -0.8]]
 
-    biases = [2.0, 3.0, 0.5]
+    weights_1 = [[0.2, 0.8, -0.5, 1],
+                [0.5, -0.91, 0.26, -0.5],
+                [-0.26, -0.27, 0.17, 0.87]]
 
-    layer_outputs = np.dot(inputs, np.array(weights).T) + biases
+    biases_1 = [2.0, 3.0, 0.5]
 
-    outputs = layer_outputs
+    # Second layer info
+    weights_2 = [[0.1, -0.14, 0.5],
+                [-0.5, 0.12, -0.33],
+                [-0.44, 0.73, -0.13]]
 
-    print("\nOUTPUTS 2:\n{}".format(outputs))
+    biases_2 = [-1.0, 2.0, -0.5]
+
+    # Main layers processing
+    layer_outputs_1 = np.dot(inputs_1, np.array(weights_1).T) + biases_1
+    layer_outputs_2 = np.dot(layer_outputs_1, np.array(weights_2).T) + biases_2
+
+    outputs = layer_outputs_2
+
+    print("\nOUTPUTS :\n{}".format(outputs))
 
 
 if __name__ == "__main__":
-    simple_layer_of_neurons()
-    general_layer_of_neurons()
+    two_layer_of_neurons()
