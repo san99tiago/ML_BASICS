@@ -22,7 +22,7 @@ ns = size(desired, 1);  % Number of Outputs
 fprintf("THE LOADED DATABASE HAS:\n");
 fprintf("\t- NUMBER OF ENTRIES (ne) = %d\n", ne);
 fprintf("\t- NUMBER OF OUTPUTS (ns) = %d\n", ns);
-fprintf("\t- NUMBER OF ENTRIES (nd) = %d\n", nd);
+fprintf("\t- NUMBER OF DATA (nd) = %d\n", nd);
 
 nmax = 10;  % Number of iterations
 alfa = 1;  % Training rate
