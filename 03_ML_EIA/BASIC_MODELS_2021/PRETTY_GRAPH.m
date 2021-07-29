@@ -51,7 +51,7 @@ function [] = PRETTY_GRAPH(nombre_grafica, tipo_grafica )
     end
     
     %Redimensionamos y relocalizamos figura (cambiar segun tamanno pantalla actual)
-    set(gcf,'Position',[10 250 600 400])
+    set(gcf,'Position',[10 250 550 350])
     
         
     %Permitimos espera, por si se desean agregar mas graficas a esta figura

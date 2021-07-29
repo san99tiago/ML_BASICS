@@ -4,6 +4,9 @@
 % Clean workspace data
 clear; close all; clc;
 
+% Access upper folder functions
+addpath(genpath("../"));
+
 % Load data
 fprintf("...Loading database...");
 load("AND.mat");
@@ -66,4 +69,11 @@ for i=1:ns
     ylabel('ouput');
     legend('Desired Output','Neural Network Output', "Location", "best");
     PRETTY_GRAPH("TRAINING RESULT FOR EACH DATA");
+
 end
+
+% Plot the confusion matrix to see how each type of data was...
+% Remark: ONLY if we have the "Deep Learning Toolbox"
+figure;
+plotconfusion(desired, Yk);
+PRETTY_GRAPH("Confusion Matrix Results");
