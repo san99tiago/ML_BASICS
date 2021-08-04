@@ -10,7 +10,7 @@
 %
 %   goal: "train" to change the Weights, "test" to check other values
 %
-%   activation_function: "none" to pass "ys" direct. (NOT a Perceptron)
+%   activation_function: "none" to pass "Ys" direct. (NOT a Perceptron)
 %                        "binary" to apply ">=0" or "<0" (Real Perceptron)
 % ------------------------------------------------------------------------
 
@@ -28,17 +28,20 @@ ecm = zeros(ns, 1);  % Only need one to start iterating
 % We must execute the iteration for all data...
 for i=1:nd
     % Main sensation output ("Agregations" Aj) (before activation function)
-    ys = W*entries(:,i);  % Also named "Aj"
-    disp("ys:");
-    disp(ys);
+    Ys = W*entries(:,i);  % Also named "Aj"
+    fprintf("Ys on internal iteration %d:\n", i);
+    disp(Ys);
     
     % Apply activation function based on function parameters
     if activation_function == "none"
-        Yk(:, i) = ys;
+        Yk(:, i) = Ys;
     end
     if activation_function == "binary"
-        Yk(:, i) = (ys>=0);  % Matlab built-in function (1 or 0)
+        Yk(:, i) = (Ys>=0);  % Matlab built-in function (1 or 0)
     end
+    
+    fprintf("Yk(:, %d):\n", i);
+    disp(Yk(:, i));
     
     % Simple error and mean square error
     error = desired(:, i) - Yk(:, i);
@@ -50,7 +53,7 @@ for i=1:nd
         
         fprintf("alfa.*(error*entries(:,%d)'):\n", i)
         disp(alfa.*(error*entries(:,i)'))
-        fprintf("W on iteration %d:\n", i)
+        fprintf("W on internal iteration %d:\n", i)
         disp(W)
     end
 end

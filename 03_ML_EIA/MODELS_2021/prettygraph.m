@@ -56,7 +56,7 @@ elseif (graphType=="step")
 end
 
 % Reshape the figure and change its position
-set(gcf,'Position',[10 250 550 350])
+set(gcf,'Position',[10 250 500 320])
 
 % % Remove toolbar and menubar from all figures
 set(gcf, 'ToolBar', 'none');
