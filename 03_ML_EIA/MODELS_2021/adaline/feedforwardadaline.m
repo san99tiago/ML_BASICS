@@ -25,12 +25,12 @@ ecm = zeros(ns, 1);  % Only need one to start iterating
 % We must execute the iteration for all data...
 for i=1:nd
     % Main sensation output ("Agregations" Aj) (before activation function)
-    ys = W*entries(:,i);  % Also named "Aj"
-    disp("ys:");
-    disp(ys);
+    Ys = W*entries(:,i);  % Also named "Aj"
+    disp("Ys:");
+    disp(Ys);
     
     % Apply activation function (for ADALINE is NONE... (linear) )
-    Yk(:, i) = ys;
+    Yk(:, i) = Ys;
     
     % Simple error and mean square error
     error = desired(:, i) - Yk(:, i);
