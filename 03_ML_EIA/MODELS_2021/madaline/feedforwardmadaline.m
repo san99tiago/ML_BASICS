@@ -22,6 +22,7 @@
 %
 %   activation_function_x: "none" to pass "Ys" directly.
 %                        "sigmoidal" to apply 1/(1 + exp(-value))
+%                        "binary" to apply ">=0" or "<0" filter
 % ------------------------------------------------------------------------
 
 
@@ -45,16 +46,17 @@ for i = 1:nd
         hj(2:end) = 1./(1 + exp(-aj));
     end
     
-    % Get output ysk after the hidden layer finds hj
-    ysk = C*hj; % size (ns x 1)
+    % Get output Ys after the hidden layer finds hj
+    Ys = C*hj; % size (ns x 1)
     
     
     % Apply activation function to the output layer
     if activation_function_2 == "none"
-        Yk(:,i) = ysk; % Linear in this case
-    end
-    if activation_function_2 == "sigmoidal"
-        Yk(:,i) = 1./(1 + exp(-ysk));
+        Yk(:,i) = Ys; % Linear in this case
+    elseif activation_function_2 == "sigmoidal"
+        Yk(:,i) = 1./(1 + exp(-Ys));
+    elseif activation_function_2 == "binary"
+        Yk(:,i) = (Ys>=0);
     end
     
     
@@ -70,6 +72,8 @@ for i = 1:nd
             ds = error; % yd - Yk
         elseif activation_function_2 == "sigmoidal"
             ds = error.*(Yk(:,i).*(1-Yk(:,i)));
+        elseif activation_function_2 == "binary"
+            ds = error; % yd - Yk
         end
 
         df1 = ((ds'*C(:,2:end)));

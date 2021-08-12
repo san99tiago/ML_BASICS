@@ -86,7 +86,7 @@ for i=1:ns
     ylabel("ecm");
     legend("ECM TRAINING");
     title(strcat("OUTPUT ", num2str(i)));
-    prettygraph("DYNAMIC SPRING MODEL ADALINE (MSE)","plot");
+    prettygraph("DYNAMIC SPRING MODEL MADALINE (MSE)","plot");
 end
 
 for i=1:ns

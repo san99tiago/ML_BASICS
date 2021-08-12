@@ -1,4 +1,4 @@
-% LOADING DATA "STRAIGHT LINE" EXECUTING MADALINE
+% LOADING DATA "DEC-BIN" EXECUTING MADALINE (WITH LAST LAYER AS PERCEPTRON)
 % Santiago Garcia Arango
 
 % Clean workspace data
@@ -9,17 +9,22 @@ addpath(genpath("../"));
 
 % Load data
 fprintf("...Loading database...");
-load("STRAIGHT_LINE.mat");
+load("DEC_BIN.mat");
 
 % -----------------------------------------------------------
 
-% Normalize data (to make them fit in specific (a, 1) range...
-normalizeEntriesValue = (max(max(entries)));
-entries = entries/normalizeEntriesValue;
-normalizeDesiredValue = (max(max(desired)));
-desired = desired/normalizeDesiredValue;
+% % Normalize data (to make them fit in specific (a, 1) range...
+% normalizeEntriesValue = (max(max(entries)));
+% entries = entries/normalizeEntriesValue;
+% normalizeDesiredValue = (max(max(desired)));
+% desired = desired/normalizeDesiredValue;
 
 % Bias does not affect the first layer (only the last one)
+
+% Add custom entries to have more diversity of "inputs"
+entries = [entries; sin(entries(1, :))];
+entries = [entries; cos(entries(1, :))];
+entries = [entries; mod(entries(1, :), 2)];
 
 % -------------------------------------------------------------
 
@@ -36,14 +41,14 @@ fprintf("\t - NUMBER OF DATA (nd) = %d\n", nd);
 % -------------------------------------------------------------
 
 % Get total of hidden layers (no)
-no = 4;
+no = 10;
 fprintf("\t - NUMBER OF HIDDEN LAYERS (no) = %d\n", no);
 
 % -------------------------------------------------------------
 
 % Variables for the training of the model
 alfa = 0.1;  % Training rate
-nmax = 150;  % Number of iterations
+nmax = 100;  % Number of iterations
 fprintf("\t + alfa = %d\n\t + nmax = %d\n", alfa, nmax);
 
 % -------------------------------------------------------------
@@ -66,14 +71,14 @@ fprintf("...Training Neural Network...");
 for m=1:nmax
     % Execute main feedfowardadaline to train or check model
     fprintf("\n-->Iteration = %d\n", m);
-    [Yk, ecm(:, m), W, C] = feedforwardmadaline(alfa,entries, W, C, desired, no, ns, nd, "train", "sigmoidal", "none");
+    [Yk, ecm(:, m), W, C] = feedforwardmadaline(alfa,entries, W, C, desired, no, ns, nd, "train", "sigmoidal", "binary");
 end
 
 % -------------------------------------------------------------
 
-% Revert normalization process
-Yk = Yk.*normalizeDesiredValue;
-desired = desired.*normalizeDesiredValue;
+% % Revert normalization process
+% Yk = Yk.*normalizeDesiredValue;
+% desired = desired.*normalizeDesiredValue;
 
 % -------------------------------------------------------------
 
@@ -86,7 +91,7 @@ for i=1:ns
     ylabel("ecm");
     legend("ECM TRAINING");
     title(strcat("OUTPUT ", num2str(i)));
-    prettygraph("STRAIGHT LINE MODEL MADALINE (MSE)","plot");
+    prettygraph("DEC-BIN MODEL MADALINE-PERCEPTRON (MSE)","plot");
 end
 
 for i=1:ns
