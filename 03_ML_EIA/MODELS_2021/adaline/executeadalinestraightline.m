@@ -64,7 +64,7 @@ end
 
 % -------------------------------------------------------------
 
-% Revert normalizaion process
+% Revert normalization process
 Yk = Yk.*normalizeDesiredValue;
 desired = desired.*normalizeDesiredValue;
 
