@@ -45,7 +45,7 @@ for i=1:nd
     
     % Simple error and mean square error
     error = desired(:, i) - Yk(:, i);
-    ecm(:) = ecm(:) + (error.^2)/2;
+    ecm(:) = ecm(:) + (error.^2)/2
     
     if goal == "train"
         % Update Weights only when the goal is to train...
