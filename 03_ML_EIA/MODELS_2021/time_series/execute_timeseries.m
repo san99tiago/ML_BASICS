@@ -117,3 +117,55 @@ for i=1:ns
     prettygraph("TRAINING RESULTS FOR EACH DATA");
 
 end
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% Validate time-series output with prediction of neural network
+
+% Create entries based on data
+newentriesfortest = zeros(windowSize, size(data, 2) - windowSize + 1);
+
+for i=1:windowSize
+    currentValue = i + size(data, 2) - windowSize + 1;
+    for j=1:size(data, 2)-windowSize+1
+        newentriesfortest(i, j) = currentValue;
+        currentValue = currentValue + 1;
+    end
+end
+
+% Normalize data (to make them fit in specific (a, 1) range...
+newentriesfortest = newentriesfortest/normalizeEntriesValue;
+
+% Create Output matrix (rows = Outputs, columns = Data)
+Yk = zeros(ns, nd);
+
+% Create the ecm (medium cuadratic error) (rows = Outputs, columns = iterations)
+ecm = zeros(ns, nmax);
+
+% Train Neural Network
+fprintf("...Training Neural Network...");
+
+for m=1:nmax
+    % Execute main feedfowardadaline to train or check model
+    fprintf("\n-->Iteration = %d\n", m);
+    [Yk, ecm(:, m), W, C] = feedforwardmadaline(alfa,newentriesfortest, W, C, desired, no, ns, nd, "validate", "sigmoidal", "none");
+end
+
+% -------------------------------------------------------------
+
+% Revert normalization process
+Yk = Yk.*normalizeDesiredValue;
+
+% -------------------------------------------------------------
+
+for i=1:ns
+    figure;
+    plot(1:nd,desired(i, :),'*b',nd+1:2*nd,Yk(i, :),'+r',"Linewidth",1);
+    xlabel('data');
+    ylabel('ouput');
+    legend('Measured Data', 'Predicted Data', "Location", "best");
+    prettygraph("TRAINING RESULTS ANALYSIS");
+
+end
+
