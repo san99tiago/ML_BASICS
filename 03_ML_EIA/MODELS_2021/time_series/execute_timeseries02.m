@@ -9,11 +9,11 @@ addpath(genpath("../"));
 
 % Load data
 fprintf("...Loading database...\n");
-load("time_series.mat");
+load("time_series02.mat");
 
 % Important variables for time-series
 windowSize = 4;
-H = 1;
+H = 20;
 
 
 % Create entries based on data
@@ -54,14 +54,14 @@ fprintf("\t - NUMBER OF DATA (nd) = %d\n", nd);
 % -------------------------------------------------------------
 
 % Get total of hidden layers (no)
-no = 10;
+no = 20;
 fprintf("\t - NUMBER OF HIDDEN LAYERS (no) = %d\n", no);
 
 % -------------------------------------------------------------
 
 % Variables for the training of the model
 alfa = 0.1;  % Training rate
-nmax = 100;  % Number of iterations
+nmax = 500;  % Number of iterations
 fprintf("\t + alfa = %d\n\t + nmax = %d\n", alfa, nmax);
 
 % -------------------------------------------------------------
@@ -159,13 +159,15 @@ Yk = Yk.*normalizeDesiredValue;
 
 % -------------------------------------------------------------
 
+% Segment outputs for only the desired horizon)
+Yk = Yk(1:H + 1);
+
 for i=1:ns
     figure;
-    plot(1:nd,desired(i, :),'*b',nd+1:2*nd,Yk(i, :),'+r',"Linewidth",1);
+    plot(1:nd,desired(i, :),'*b',nd+1:nd+1+H,Yk(i, :),'+r',"Linewidth",1);
     xlabel('data');
     ylabel('ouput');
     legend('Measured Data', 'Predicted Data', "Location", "best");
     prettygraph("TRAINING RESULTS ANALYSIS");
-
 end
 
