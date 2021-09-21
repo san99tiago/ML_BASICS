@@ -8,7 +8,7 @@ clear; close all; clc;
 addpath(genpath("../"));
 
 fprintf('Loading data....\n');
-load('simulink_data_01.mat');
+load('simulink_data_02.mat');
 
 % Get relevant information from system's data
 yd = ST(:,2); % System's response from Simulink
@@ -58,7 +58,7 @@ ys2 = sim(r,ymax); % Simulate the MAX system
 
 
 % ARMAX Model
-yarmax = armax(data,[50,1,2,0])
+yarmax = armax(data,[2,1,2,0])
 ys3 = sim(r,yarmax); % Simulate the ARMAX system
 
 
