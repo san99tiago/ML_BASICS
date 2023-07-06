@@ -1,4 +1,4 @@
-﻿cycler==0.10.0
+cycler==0.10.0
 flake8==3.8.3
 joblib==1.2.0
 kiwisolver==1.2.0
@@ -13,7 +13,7 @@ pyparsing==2.4.7
 python-dateutil==2.8.1
 pytz==2020.1
 scikit-learn==0.23.1
-scipy==1.5.1
+scipy==1.10.0
 seaborn==0.10.1
 six==1.15.0
 threadpoolctl==2.1.0
